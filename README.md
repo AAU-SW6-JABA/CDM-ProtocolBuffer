@@ -1,2 +1,2 @@
-# gRPC-config
-Definition of the gRPC service using protocol buffers
+# CDM: Protocol Buffer
+The protocol buffers for the Crowd Density Management project
