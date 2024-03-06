@@ -38,8 +38,8 @@ message RegisterAntennaResponse {
 // Get antennas
 message Antenna {
     uint32 aid = 1;
-    int64 x = 1;
-    int64 y = 2;
+    int64 x = 2;
+    int64 y = 3;
 }
 
 message GetAntennasResponse {
@@ -58,10 +58,10 @@ message Location {
 }
 
 enum GetLocationsBy {
-    IDENTIFIER = 1;
-    INTERVAL = 2;
-    N_RECENT = 3;
-    ALL = 4;
+    IDENTIFIER = 0;
+    INTERVAL = 1;
+    N_RECENT = 2;
+    ALL = 3;
 }
 
 // Location get
