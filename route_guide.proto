@@ -73,7 +73,7 @@ message GetLocationsRequest {
 }
 
 message GetLocationsResponse {
-    repeated Location = 1;
+    repeated Location location = 1;
 }
 
 /// ****************************
@@ -93,5 +93,5 @@ message LocationMeasurementsRequest {
 }
 
 message LocationMeasurementsResponse {
-    repeated Measurement = 1;
+    repeated Measurement measurement = 1;
 }
