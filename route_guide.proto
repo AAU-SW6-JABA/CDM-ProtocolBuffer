@@ -17,7 +17,7 @@ message Empty {}
 message LogMeasurementRequest {
     uint32 aid = 1;
     uint64 imsi = 2;
-    double timestamp = 3;
+    uint64 timestamp = 3;
     double signal_strength = 4;
 }
 
@@ -52,7 +52,7 @@ message GetAntennasResponse {
 
 message Location {
     uint64 identifier = 1;
-    double calctime = 2;
+    uint64 calctime = 2;
     int64 x = 3;
     int64 y = 4;
 }
@@ -68,7 +68,7 @@ enum GetLocationsBy {
 message GetLocationsRequest {
     GetLocationsBy method = 1;
     optional uint64 identifier = 2;
-    optional double timeinterval = 3;
+    optional uint64 timeinterval = 3;
     optional uint32 n_recent = 4;
 }
 
@@ -83,13 +83,13 @@ message GetLocationsResponse {
 message Measurement {
     uint64 mid = 1;
     uint32 aid = 2;
-    double timestamp = 3;
+    uint64 timestamp = 3;
     double signal_strength = 4;
 }
 
 message LocationMeasurementsRequest {
     uint64 identifier = 1;
-    double calctime = 2;
+    uint64 calctime = 2;
 }
 
 message LocationMeasurementsResponse {
