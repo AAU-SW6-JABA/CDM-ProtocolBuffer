@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+package cdm_protobuf;
+
 service Routes {
     rpc LogMeasurementRoute(stream LogMeasurementRequest) returns (Empty);
     rpc RegisterAntennaRoute(RegisterAntennaRequest) returns (RegisterAntennaResponse);
