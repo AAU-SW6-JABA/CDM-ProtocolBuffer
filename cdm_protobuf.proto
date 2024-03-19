@@ -45,7 +45,7 @@ message Antenna {
 }
 
 message GetAntennasResponse {
-    optional repeated Antenna antenna = 1;
+    repeated Antenna antenna = 1;
 }
 
 /// *************************
@@ -75,7 +75,7 @@ message GetLocationsRequest {
 }
 
 message GetLocationsResponse {
-    optional repeated Location location = 1;
+    repeated Location location = 1;
 }
 
 /// ****************************
@@ -95,5 +95,5 @@ message LocationMeasurementsRequest {
 }
 
 message LocationMeasurementsResponse {
-    optional repeated Measurement measurement = 1;
+    repeated Measurement measurement = 1;
 }
