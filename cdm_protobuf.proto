@@ -17,10 +17,10 @@ message Empty {}
 
 // Logging of measurtement
 message LogMeasurementRequest {
-    uint32 aid = 1;
-    uint64 imsi = 2;
-    double timestamp = 3;
-    double signal_strength = 4;
+    optional uint32 aid = 1;
+    optional string identifier = 2;
+    optional double timestamp = 3;
+    optional double signal_strength = 4;
 }
 
 /// ************************
@@ -29,23 +29,23 @@ message LogMeasurementRequest {
 
 // Register antennas
 message RegisterAntennaRequest {
-    double x = 1;
-    double y = 2;
+    optional double x = 1;
+    optional double y = 2;
 }
 
 message RegisterAntennaResponse {
-    uint32 aid = 1;
+    optional uint32 aid = 1;
 }
 
 // Get antennas
 message Antenna {
-    uint32 aid = 1;
-    double x = 2;
-    double y = 3;
+    optional uint32 aid = 1;
+    optional double x = 2;
+    optional double y = 3;
 }
 
 message GetAntennasResponse {
-    repeated Antenna antenna = 1;
+    optional repeated Antenna antenna = 1;
 }
 
 /// *************************
@@ -53,10 +53,10 @@ message GetAntennasResponse {
 /// *************************
 
 message Location {
-    uint64 identifier = 1;
-    double calctime = 2;
-    double x = 3;
-    double y = 4;
+    optional string identifier = 1;
+    optional double calctime = 2;
+    optional double x = 3;
+    optional double y = 4;
 }
 
 enum GetLocationsBy {
@@ -69,13 +69,13 @@ enum GetLocationsBy {
 // Location get
 message GetLocationsRequest {
     GetLocationsBy method = 1;
-    optional uint64 identifier = 2;
+    optional string identifier = 2;
     optional double timeinterval = 3;
     optional uint32 n_recent = 4;
 }
 
 message GetLocationsResponse {
-    repeated Location location = 1;
+    optional repeated Location location = 1;
 }
 
 /// ****************************
@@ -83,17 +83,17 @@ message GetLocationsResponse {
 /// ****************************
 
 message Measurement {
-    uint64 mid = 1;
-    uint32 aid = 2;
-    double timestamp = 3;
-    double signal_strength = 4;
+    optional uint64 mid = 1;
+    optional uint32 aid = 2;
+    optional double timestamp = 3;
+    optional double signal_strength = 4;
 }
 
 message LocationMeasurementsRequest {
-    uint64 identifier = 1;
-    double calctime = 2;
+    optional string identifier = 1;
+    optional double calctime = 2;
 }
 
 message LocationMeasurementsResponse {
-    repeated Measurement measurement = 1;
+    optional repeated Measurement measurement = 1;
 }
