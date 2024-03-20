@@ -3,7 +3,8 @@ syntax = "proto3";
 package cdm_protobuf;
 
 service Routes {
-    rpc LogMeasurementRoute(stream LogMeasurementRequest) returns (Empty);
+    rpc LogMeasurementRoute(LogMeasurementRequest) returns (Empty);
+    rpc LogMeasurementsRoute(LogMeasurementsRequest) returns (Empty);
     rpc RegisterAntennaRoute(RegisterAntennaRequest) returns (RegisterAntennaResponse);
     rpc GetAntennasRoute(Empty) returns (GetAntennasResponse);
     rpc GetLocationsRoute(GetLocationsRequest) returns (GetLocationsResponse);
@@ -21,6 +22,10 @@ message LogMeasurementRequest {
     optional string identifier = 2;
     optional double timestamp = 3;
     optional double signal_strength = 4;
+}
+
+message LogMeasurementsRequest {
+    repeated LogMeasurementRequest measurements = 1;
 }
 
 /// ************************
