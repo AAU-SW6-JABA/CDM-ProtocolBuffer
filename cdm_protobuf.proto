@@ -3,12 +3,12 @@ syntax = "proto3";
 package cdm_protobuf;
 
 service Routes {
-    rpc LogMeasurementRoute(LogMeasurementRequest) returns (Empty);
-    rpc LogMeasurementsRoute(LogMeasurementsRequest) returns (Empty);
-    rpc RegisterAntennaRoute(RegisterAntennaRequest) returns (RegisterAntennaResponse);
-    rpc GetAntennasRoute(Empty) returns (GetAntennasResponse);
-    rpc GetLocationsRoute(GetLocationsRequest) returns (GetLocationsResponse);
-    rpc GetLocationMeasurementsRoute(LocationMeasurementsRequest) returns (LocationMeasurementsResponse);
+  rpc LogMeasurementRoute(LogMeasurementRequest) returns (Empty);
+  rpc LogMeasurementsRoute(LogMeasurementsRequest) returns (Empty);
+  rpc RegisterAntennaRoute(RegisterAntennaRequest) returns (RegisterAntennaResponse);
+  rpc GetAntennasRoute(Empty) returns (GetAntennasResponse);
+  rpc GetLocationsRoute(GetLocationsRequest) returns (GetLocationsResponse);
+  rpc GetLocationMeasurementsRoute(LocationMeasurementsRequest) returns (LocationMeasurementsResponse);
 }
 
 /// ***************
@@ -18,14 +18,14 @@ message Empty {}
 
 // Logging of measurtement
 message LogMeasurementRequest {
-    optional uint32 aid = 1;
-    optional string identifier = 2;
-    optional double timestamp = 3;
-    optional double signal_strength = 4;
+  optional uint32 aid = 1;
+  optional string identifier = 2;
+  optional double timestamp = 3;
+  optional double signal_strength = 4;
 }
 
 message LogMeasurementsRequest {
-    repeated LogMeasurementRequest measurements = 1;
+  repeated LogMeasurementRequest measurements = 1;
 }
 
 /// ************************
@@ -34,23 +34,23 @@ message LogMeasurementsRequest {
 
 // Register antennas
 message RegisterAntennaRequest {
-    optional double x = 1;
-    optional double y = 2;
+  optional double x = 1;
+  optional double y = 2;
 }
 
 message RegisterAntennaResponse {
-    optional uint32 aid = 1;
+  optional uint32 aid = 1;
 }
 
 // Get antennas
 message Antenna {
-    optional uint32 aid = 1;
-    optional double x = 2;
-    optional double y = 3;
+  optional uint32 aid = 1;
+  optional double x = 2;
+  optional double y = 3;
 }
 
 message GetAntennasResponse {
-    repeated Antenna antenna = 1;
+  repeated Antenna antenna = 1;
 }
 
 /// *************************
@@ -58,29 +58,29 @@ message GetAntennasResponse {
 /// *************************
 
 message Location {
-    optional string identifier = 1;
-    optional double calctime = 2;
-    optional double x = 3;
-    optional double y = 4;
+  optional string identifier = 1;
+  optional double calctime = 2;
+  optional double x = 3;
+  optional double y = 4;
 }
 
 enum GetLocationsBy {
-    IDENTIFIER = 0;
-    INTERVAL = 1;
-    N_RECENT = 2;
-    ALL = 3;
+  IDENTIFIER = 0;
+  INTERVAL = 1;
+  N_RECENT = 2;
+  ALL = 3;
 }
 
 // Location get
 message GetLocationsRequest {
-    GetLocationsBy method = 1;
-    optional string identifier = 2;
-    optional double timeinterval = 3;
-    optional uint32 n_recent = 4;
+  GetLocationsBy method = 1;
+  optional string identifier = 2;
+  optional double timeinterval = 3;
+  optional uint32 n_recent = 4;
 }
 
 message GetLocationsResponse {
-    repeated Location location = 1;
+  repeated Location location = 1;
 }
 
 /// ****************************
@@ -88,17 +88,17 @@ message GetLocationsResponse {
 /// ****************************
 
 message Measurement {
-    optional uint64 mid = 1;
-    optional uint32 aid = 2;
-    optional double timestamp = 3;
-    optional double signal_strength = 4;
+  optional uint64 mid = 1;
+  optional uint32 aid = 2;
+  optional double timestamp = 3;
+  optional double signal_strength = 4;
 }
 
 message LocationMeasurementsRequest {
-    optional string identifier = 1;
-    optional double calctime = 2;
+  optional string identifier = 1;
+  optional double calctime = 2;
 }
 
 message LocationMeasurementsResponse {
-    repeated Measurement measurement = 1;
+  repeated Measurement measurement = 1;
 }
