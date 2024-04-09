@@ -29,8 +29,6 @@ message LogMeasurementsRequest {
   repeated LogMeasurementRequest measurements = 1;
 }
 
-
-
 /// ************************
 /// Antenna related messages
 /// ************************
