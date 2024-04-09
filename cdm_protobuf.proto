@@ -9,6 +9,7 @@ service Routes {
   rpc GetAntennasRoute(Empty) returns (GetAntennasResponse);
   rpc GetLocationsRoute(GetLocationsRequest) returns (GetLocationsResponse);
   rpc GetLocationMeasurementsRoute(LocationMeasurementsRequest) returns (LocationMeasurementsResponse);
+  rpc SubscribeToLoctaions(SubscribeRequest) returns (stream Locations);
 }
 
 /// ***************
@@ -27,6 +28,8 @@ message LogMeasurementRequest {
 message LogMeasurementsRequest {
   repeated LogMeasurementRequest measurements = 1;
 }
+
+
 
 /// ************************
 /// Antenna related messages
@@ -101,4 +104,16 @@ message LocationMeasurementsRequest {
 
 message LocationMeasurementsResponse {
   repeated Measurement measurement = 1;
+}
+
+/// ******************************
+/// Subscribe to location messages
+/// ******************************
+
+message Locations {
+  repeated Location location = 1;
+}
+
+message SubscribeRequest {
+  optional string identifier = 1;
 }
