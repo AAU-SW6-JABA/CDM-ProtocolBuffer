@@ -9,7 +9,7 @@ service Routes {
   rpc GetAntennasRoute(Empty) returns (GetAntennasResponse);
   rpc GetLocationsRoute(GetLocationsRequest) returns (GetLocationsResponse);
   rpc GetLocationMeasurementsRoute(LocationMeasurementsRequest) returns (LocationMeasurementsResponse);
-  rpc SubscribeToLoctaions(SubscribeRequest) returns (stream Locations);
+  rpc SubscribeToLocations(SubscribeRequest) returns (stream Locations);
 }
 
 /// ***************
