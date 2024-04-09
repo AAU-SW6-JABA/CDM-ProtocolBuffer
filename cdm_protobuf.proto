@@ -113,5 +113,5 @@ message Locations {
 }
 
 message SubscribeRequest {
-  optional string identifier = 1;
+  optional string clientid = 1;
 }
