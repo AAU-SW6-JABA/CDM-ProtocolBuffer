@@ -70,7 +70,7 @@ message GetLocationsRequest {
   optional uint32 n_recent = 1;
   optional double timeBegin = 2;
   optional double timeEnd = 3;
-  optional string identifier = 4;
+  repeated string identifier = 4;
 }
 
 message GetLocationsResponse {
