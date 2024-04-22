@@ -65,19 +65,12 @@ message Location {
   optional double y = 4;
 }
 
-enum GetLocationsBy {
-  IDENTIFIER = 0;
-  INTERVAL = 1;
-  N_RECENT = 2;
-  ALL = 3;
-}
-
 // Location get
 message GetLocationsRequest {
-  GetLocationsBy method = 1;
-  optional string identifier = 2;
-  optional double timeinterval = 3;
-  optional uint32 n_recent = 4;
+  optional uint32 n_recent = 1;
+  optional double timeBegin = 2;
+  optional double timeEnd = 3;
+  optional string identifier = 4;
 }
 
 message GetLocationsResponse {
